@@ -1,40 +1,9 @@
-.toolbar {
-
-}
-
-.example-fill-remaining-space {
+.example-spacer {
   flex: 1 1 auto;
 }
+.img{
+  padding-left: 1cm;
+  max-width: 30%;
+  border-radius: 0.5px;
 
-.avatar-profile-header {
-  background-size: cover;
-  width: 45px;
-  height: 45px;
-  border-radius: 25px;
-  display: inline-flex;
-  vertical-align: middle;
-  margin: 5px;
-}
-
-.username {
-  font-size: 0.9rem;
-  color: black;
-}
-
-
-.container-router {
-  display: block;
-  width: 100%;
-  min-width: 100%;
-  padding: 0;
-}
-
-.username-container {
-  cursor: pointer;
-}
-
-.scrollbar {
-  max-height: calc(100vh - 65px);
-  overflow-y: auto;
-  min-height: calc(100vh - 65px);
 }

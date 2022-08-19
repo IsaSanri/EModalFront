@@ -16,15 +16,6 @@ export class ToolbarComponent {
     private router: Router
   ) {}
 
-  toggleSidebar() {
-    /*const appSidebar = document.getElementsByClassName("app-sidebar")[0];
-    if (appSidebar.classList.contains("hide-sidebar")) {
-      this.toggleHideSidebar.emit(false);
-    } else {
-      this.toggleHideSidebar.emit(true);
-    }*/
-  }
-
   public logout(): void {
     this.authenticationService.logout();
     this.router.navigateByUrl("login");

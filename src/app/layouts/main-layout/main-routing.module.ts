@@ -1,28 +1,36 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { ContainerListComponent } from "./components/container-list/container-list.component";
+import { HomeComponent } from "./components/home/home.component";
+import { MovesComponent } from "./components/moves/moves.component";
+import { PaymentsComponent } from "./components/payments/payments.component";
 import { MainLayoutComponent } from "./main-layout.component";
-import { AuthGuard } from "@app-core/auth-guard/auth.guard";
+
 
 const routes: Routes = [
   {
-    path: "",
+    path:"",
     component: MainLayoutComponent,
-    canActivate: [AuthGuard],
-    children: [
+    // canActivate:[PermissionsGuard],
+    children:[
       {
-        path: "",
-        pathMatch: "full",
-        redirectTo: "dashboard",
+        path: 'home',
+        component: HomeComponent
       },
       {
-        path: "dashboard",
-        pathMatch: "full",
-        loadChildren: () =>
-          import("../../modules/dashboard/dashboard.module").then(
-            (m) => m.DashboardModule
-          ),
+        path: 'containers',
+        component: ContainerListComponent
       },
+      {
+        path:'moves',
+        component: MovesComponent
+      },
+      {
+        path: 'payment',
+        component: PaymentsComponent
+      }
     ],
+
   },
 ];
 

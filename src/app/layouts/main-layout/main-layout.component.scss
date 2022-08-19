@@ -1,0 +1,28 @@
+.layout{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: 50px 100px;
+	grid-gap: 10px;
+  height: 100vh;
+  margin: 10px;
+}
+
+.toolbar{
+  grid-column: 1/7;
+  grid-row: 1/2;
+}
+
+.home{
+  padding-top: 0.3cm;
+  grid-column: 1/7;
+  grid-row: 2/7;
+}
+
+.sidenav{
+  padding-top: 0.5cm;
+  padding-left: 0.5cm;
+  grid-column: 1;
+  grid-row: 1/6;
+}
+

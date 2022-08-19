@@ -1,9 +1,20 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Username" />
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="password" />
-  </mat-form-field>
-  <button mat-button (click)="goTo()">Click me!</button>
-</form>
+<body>
+  <mat-card class="login-box">
+    <img
+      src="https://mms.businesswire.com/media/20190626005662/en/730070/23/eModal_logo_trans_e93930.jpg"
+      alt="emodallogo"
+      class="img"
+    />
+    <mat-card-content>
+      <div class="user-box">
+        <input matInput placeholder="email@example.com" />
+      </div>
+      <div class="user-box">
+        <input matInput placeholder="*******" />
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="goTo()" >LOGIN</button>
+    </mat-card-actions>
+  </mat-card>
+</body>

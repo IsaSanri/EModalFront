@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+  background-image: url('https://www.archcontainers.com/wp-content/uploads/2016/07/terminales-maritimas.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 700;
+  border-radius: 20px;
+}
+.dashboard{
+  position: absolute;
+  top: 65%;
+  left: 55%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background:white;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+  text-align: center;
+}
