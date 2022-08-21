@@ -1,6 +1,7 @@
 export const environment = {
   PRODUCTION: false,
-  URL: "http://www.omdbapi.com",
+  URL: "https://localhost:7232/",
+  EDI:"",
   API: "",
-  OMDB_APIKEY: "886fac43",
+
 };

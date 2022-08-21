@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ContainerService } from "@app-services/container.service";
+import { ContainerService } from "@app-services/containers/container.service";
 
 @Component({
   selector: "app-moves",
@@ -10,5 +10,5 @@ export class MovesComponent {
   constructor(private containerService: ContainerService) {}
 
   displayedColumns: string[] = ["issuesBy", "qty", "fee", "total"];
-  dataSource = this.containerService.fillTable();
+  // dataSource = this.containerService.fillTable();
 }

@@ -1,12 +1,7 @@
 <div class="container">
   <mat-form-field appearance="standard">
     <mat-label>Search <mat-icon>search</mat-icon></mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      placeholder="Ex. ium"
-      #input
-    />
+    <input type="search" matInput placeholder="Container #" (keydown)="filter($event)">
   </mat-form-field>
   <br>
   <br>

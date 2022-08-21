@@ -6,15 +6,18 @@
       class="img"
     />
     <mat-card-content>
+      <form class="login-container__form" [formGroup]="loginForm">
       <div class="user-box">
-        <input matInput placeholder="email@example.com" />
+        <input matInput placeholder="email@example.com" formControlName='username'/>
       </div>
       <div class="user-box">
-        <input matInput placeholder="*******" />
+        <input matInput type= "password" placeholder="*******" formControlName='password' />
       </div>
+    </form>
     </mat-card-content>
     <mat-card-actions>
-      <button (click)="goTo()" >LOGIN</button>
+      <button *ngIf="!clicked" class="login-container__button" mat-raised-button color="warn"
+      [disabled]="loginForm.invalid" (click)="goTo()">Log In</button>
     </mat-card-actions>
   </mat-card>
 </body>

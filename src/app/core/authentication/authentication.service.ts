@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+
 import { Observable } from "rxjs";
 
 import { HttpService } from "../http/http.service";
@@ -17,19 +18,20 @@ export class AuthenticationService {
     localStorage.setItem(TOKEN_NAME, token);
   }
 
-  isTokenExpired(_token?: string): boolean {
-    /* if (!token) {
-      token = this.getToken();
-    }
-    if (!token) {
-      return true;
-    }
-    return this.helper.isTokenExpired(token);*/
-    return false;
+  isTokenExpired(): boolean {
+    const token = this.getToken();
+    if (!token) { return true }
+    const claims = JSON.parse(window.atob(token.split('.')[1]))
+    const unixTime = Math.floor(new Date().getTime() / 1000);
+
+    return claims.exp < unixTime;
   }
 
   login(username: string, password: string): Observable<unknown> {
-    return this.httpService.post("", { username, password });
+    return this.httpService.post(`Authentication`, {
+      username,
+      password,
+    });
   }
 
   logout(): void {
