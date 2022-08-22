@@ -1,14 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
-import { SetBookingInfo } from '../actions/booking-info.action';
-import { BookingInfo } from '../models/booking.model';
+import { SetBookingDate } from '../actions/booking-info.action';
 
-const initialState: BookingInfo = {
-    userId: 0,
-    date: new Date(),
-    paymentMethodId: 0
-};
+const initialState: string = "0000-00-00";
 
-export const SetBookingInfoReducer = createReducer(
+export const SetBookingDateReducer = createReducer(
     initialState,
-    on(SetBookingInfo, (state, bookingInfo) => ({ ...state, bookingInfo }))
+    on(SetBookingDate, (state, date) => {
+        state = date.date
+        return state;
+    })
 );

@@ -1,33 +1,34 @@
-<div class="container">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="containerNumber">
-      <th mat-header-cell *matHeaderCellDef>Container Id</th>
-      <td mat-cell *matCellDef="let element">{{ element.containerId }}</td>
-  </ng-container>
-
-    <ng-container matColumnDef="issuesBy">
-      <th mat-header-cell *matHeaderCellDef>Issues By</th>
-      <td mat-cell *matCellDef="let element">{{ element.issuesBy }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="qty">
-      <th mat-header-cell *matHeaderCellDef>Qty</th>
-      <td mat-cell *matCellDef="let element">{{ element.qty }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="fee">
-      <th mat-header-cell *matHeaderCellDef>Fee</th>
-      <td mat-cell *matCellDef="let element">{{ element.fee }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="total">
-      <th mat-header-cell *matHeaderCellDef>Total</th>
-      <td mat-cell *matCellDef="let element">{{ element.total }}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+<div class="book-container">
+  <div class="book-container__header">
+    <h3>Container: {{ container.containerId }}</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Date</mat-label>
+      <input type="date" matInput [(ngModel)]="dateBook" />
+    </mat-form-field>
+  </div>
+  <div class="book-container__info">
+    <table>
+      <thead>
+        <tr>
+          <th>Issued by</th>
+          <th>Status</th>
+          <th>Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ container.issuedBy }}</td>
+          <td>{{ container.status }}</td>
+          <td>{{ container.fee }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="book-container__footer">
+    <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+    <button mat-raised-button color="accent" (click)="addToCart()">
+      Add to Cart
+    </button>
+    <button mat-raised-button color="primary" (click)="pay()">Pay now</button>
+  </div>
 </div>
-
-

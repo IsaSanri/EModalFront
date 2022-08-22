@@ -1,22 +1,11 @@
 import { Container } from 'src/app/models/container.model';
-
 export interface BookingState {
-    info: BookingInfo,
-    details: BookingDetail,
-    container: Container
-}
-
-export interface BookingInfo {
-    userId: number,
-    date: Date,
-    paymentMethodId: number
+  date: string,
+  details: BookingDetail[],
+  container: Container
 }
 
 export interface BookingDetail {
-    details: ProductDetail[]
-}
-
-export interface ProductDetail {
-    containerId: number,
-    fee: number
+  containerId: string,
+  fee: number
 }
