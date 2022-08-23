@@ -18,19 +18,19 @@ export class HttpService {
 
   public get<T>(endPoint: string, params?: any) {
     return this.http
-      .get<T>(environment.URL + environment.API + endPoint, { params })
+      .get<T>(environment.LOGIN + environment.API + endPoint, { params })
       .pipe(catchError(this.handleError));
   }
 
   public post<t>(endPoint: string, param: any) {
     return this.http
-      .post<t>(environment.URL + environment.API + endPoint, param)
+      .post<t>(environment.LOGIN + environment.API + endPoint, param)
       .pipe(catchError(this.handleError));
   }
 
   public put<t>(endPoint: string, param: any) {
     return this.http
-      .put<t>(environment.URL + environment.API + endPoint, param)
+      .put<t>(environment.LOGIN + environment.API + endPoint, param)
       .pipe(catchError(this.handleError));
   }
 
@@ -60,7 +60,7 @@ export class HttpService {
     }
   ) {
     return this.http
-      .delete<t>(environment.URL + environment.API + endPoint, param)
+      .delete<t>(environment.LOGIN + environment.API + endPoint, param)
       .pipe(catchError(this.handleError));
   }
 

@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { AddToCart } from '../actions/add-cart.actions';
+import { AddToCart } from '../actions/add-to-cart.action';
 import { BookingDetail } from '../models/booking.model';
 
 const initialState: BookingDetail[] = [{

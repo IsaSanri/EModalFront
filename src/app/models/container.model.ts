@@ -1,11 +1,18 @@
 export interface Container {
-  containerId: string,
-  origin: string,
-  destination?: string,
-  status:string,
-  description: string,
-  dimensions: string,
-  book:boolean
-  issuedBy: string,
-  fee:number
+  container: string;
+  origin: string;
+  destination: string;
+  status: string;
+  description: string;
+  dimensions: string;
+  book: boolean
+
+}
+
+export interface Move{
+  issuedBy:string,
+  qty:number,
+  fee:number,
+  total:number
+
 }

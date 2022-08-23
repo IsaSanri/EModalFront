@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@app-core/http/http.service';
-import { BookingDetail } from '@app-core/store/models/booking.model';
+// import { BookingDetail } from '@app-core/store/models/booking.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +19,13 @@ export class BookingsService {
     return this.httpService.get(`Payments/Methods/${this.userId}`)
   }
 
-  payBooking(date: string, paymentMethodId: number, details: BookingDetail[]) {
-    const booking = {
-      userId: this.userId,
-      date,
-      details,
-      paymentMethodId
-    }
-    return this.httpService.post('Bookings', booking)
-  }
+  // payBooking(date: string, paymentMethodId: number, details: BookingDetail[]) {
+  //   const booking = {
+  //     userId: this.userId,
+  //     date,
+  //     details,
+  //     paymentMethodId
+  //   }
+  //   return this.httpService.post('Bookings', booking)
+  // }
 }

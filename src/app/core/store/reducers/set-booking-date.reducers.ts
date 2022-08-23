@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { SetBookingDate } from '../actions/booking-info.action';
+import { SetBookingDate } from '../actions/set-booking-date.action';
 
 const initialState: string = "0000-00-00";
 

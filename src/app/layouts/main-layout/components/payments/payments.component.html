@@ -1,70 +1,111 @@
-<div class="cart">
-  <h1 class="cart__title">CONFIRM PURCHASE</h1>
-  <div class="cart__content">
-    <div class="cart__table">
-      <h2>Cart</h2>
-      <div class="table">
-        <table mat-table [dataSource]="cart" class="mat-elevation-z0">
-          <ng-container matColumnDef="containerId">
-            <th mat-header-cell *matHeaderCellDef>Container #</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.containerId }}
-            </td>
-          </ng-container>
 
-          <ng-container matColumnDef="fee">
-            <th mat-header-cell *matHeaderCellDef>Fee</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.fee | currency }}
-            </td>
-          </ng-container>
 
-          <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef></th>
-            <td mat-cell *matCellDef="let element">
-              <button mat-icon-button (click)="delete(element.containerId)">
-                <mat-icon>close</mat-icon>
-              </button>
-            </td>
-          </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
+<div class="container">
+
+<h2>Confirm Purchase</h2>
+
+<div class="container__mix">
+
+  <div class="table">
+    <h3>My Card</h3>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="issuedBy">
+        <th mat-header-cell *matHeaderCellDef>Issues By</th>
+        <td mat-cell *matCellDef="let element">{{element.issuedBy}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="qty">
+        <th mat-header-cell *matHeaderCellDef>Qty</th>
+        <td mat-cell *matCellDef="let element">{{element.qty}}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="fee">
+        <th mat-header-cell *matHeaderCellDef>Fee</th>
+        <td mat-cell *matCellDef="let element">{{element.fee | number}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Total</th>
+        <td mat-cell *matCellDef="let element">${{element.total | number}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element" style="text-align: right">
+          <a style="color: #e15639" class="pointer" matTooltip="Delete Payment" [routerLink]="['/home']">
+            <mat-icon>cancel</mat-icon></a
+          >
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+          mat-row
+          (click)="clickedRows.add(row)"
+          [class.demo-row-is-clicked]="clickedRows.has(row)"
+          *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+
+    </table>
+
+    <div class="total_pay">
+      <div class="buttoms">
+        <button mat-raised-button color="warn">Cancel</button>
+      </div>
+
+      <div class="total">
+        <p>Total: ${{total | number}}</p>
       </div>
     </div>
-    <div class="cart__payment-info">
-      <h2>Payment information</h2>
-      <h3>Total {{ totalPayment | currency }} USD</h3>
-      <mat-form-field appearance="fill">
-        <mat-label>Select card</mat-label>
-        <mat-select [(ngModel)]="paymentMethod">
-          <mat-option
-            *ngFor="let paymentMethod of paymentMethods"
-            [value]="paymentMethod.id"
-          >
-            **** {{ paymentMethod.last4 }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+
+  </div>
+
+
+  <div class="payment__info">
+    <h3>Payment Information</h3>
+    <div class="cont">
+      <div class="section total">
+        <h3>Total</h3>
+        <p>$ USD</p>
+      </div>
+
+      <div class="section company">
+        <h3>Company</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Trucking company name</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </div>
+
+      <div class="section payment-source">
+        <h3>Select payment source</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>Payment source</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let source of sources" [value]="source.value">
+              {{ source.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="pay-now-button">
+        <button mat-raised-button color="primary">Pay now</button>
+      </div>
+
+      <img
+          src="https://www.prestongateinn.co.uk/wp-content/uploads/2022/03/Payment_Method.png"
+          class="payment-sorces-image"
+          alt="PaymentSources"
+        />
     </div>
   </div>
-  <div class="cart__footer">
-    <button
-      class="cart__button"
-      mat-raised-button
-      color="warn"
-      (click)="cancel()"
-    >
-      Cancel
-    </button>
-    <button
-      class="cart__button"
-      mat-raised-button
-      color="primary"
-      (click)="pay()"
-    >
-      Pay Now
-    </button>
-  </div>
+</div>
+
+
 </div>

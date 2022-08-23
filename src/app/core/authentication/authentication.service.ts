@@ -1,14 +1,12 @@
 import { Injectable } from "@angular/core";
-
 import { Observable } from "rxjs";
-
 import { HttpService } from "../http/http.service";
 
 export const TOKEN_NAME = "token";
 
 @Injectable()
 export class AuthenticationService {
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService) { }
 
   getToken(): string {
     return localStorage.getItem(TOKEN_NAME) || "";
@@ -28,7 +26,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<unknown> {
-    return this.httpService.post(`Authentication`, {
+    return this.httpService.post('Authentication', {
       username,
       password,
     });

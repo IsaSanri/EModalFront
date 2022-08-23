@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { Container } from 'src/app/models/container.model';
+import { Container } from 'src/app/interfaces/container';
 import { CancelReview, ReviewContainer } from '../actions/container.action';
 
 const initialState: Container = {

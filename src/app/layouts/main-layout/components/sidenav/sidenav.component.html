@@ -1,22 +1,10 @@
-<!-- <div class="nav-wrap">
-  <nav class="main-nav" role="navigation">
-    <span onclick="openNav()"><mat-icon>dialpad</mat-icon></span>
-    <ul class="unstyled list-hover-slide">
-      <li><a [routerLink]="['/dashboard/home']">Home</a></li>
-      <li><a [routerLink]="['/dashboard/container']">Container List</a></li>
-      <li><a [routerLink]="['/dashboard/moves']">Request Move</a></li>
-      <li><a [routerLink]="['/dashboard/payment']">Payment</a></li>
-    </ul>
-  </nav>
-</div> -->
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()"><mat-icon>close</mat-icon></a>
-
-  <a [routerLink]="['home']">Home</a>
-  <a [routerLink]="['containers']">Container List</a>
-  <a [routerLink]="['moves']">Request Move</a>
-  <a [routerLink]="['payment']">Payment</a>
+  <a [routerLink]="['/home']">Home</a>
+  <a [routerLink]="['/containers']">Container List</a>
+  <a [routerLink]="['/moves']">Request Move</a>
+  <a [routerLink]="['/payment']">Payment</a>
 </div>
 <span
   style="font-size: 30px; cursor: pointer"

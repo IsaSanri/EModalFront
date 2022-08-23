@@ -1,25 +1,99 @@
-.cart {
-  padding: 120px 20px 20px 40px;
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
 
-  &__title {
+  h2{
+      text-align: center;
+      margin-top: 1rem;
       font-weight: bold;
   }
 
-  &__footer {
-      padding-top: 40px;
-      display: flex;
-      width: 70%;
-      justify-content: space-between;
-      margin: 0 auto;
-  }
+  .table{
+      h3{
+          text-align: center;
+      }
 
-  &__content {
-      display: flex;
-      justify-content: space-evenly;
+      .total_pay{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 3rem;
 
-      :nth-child(n) {
-          width: 90%;
+          .total{
+              font-size: 1rem;
+              font-weight: bold;
+              text-align: center;
+              background-color: #129b4b;
+              color: white;
+              padding: 1.5rem;
+              border-radius: 100%;
+
+              p{
+                  margin: 0;
+              }
+
+
+          }
       }
   }
 
+  .payment__info{
+      h3{
+          text-align: center;
+      }
+  }
+
+  .container__mix{
+
+      display: grid;
+      grid-template-columns: 70% 30%;
+
+      .demo-table {
+          width: 100%;
+        }
+
+        .mat-row .mat-cell {
+          border-bottom: 1px solid transparent;
+          border-top: 1px solid transparent;
+          cursor: pointer;
+        }
+
+        .mat-row:hover .mat-cell {
+          border-color: currentColor;
+        }
+
+        .demo-row-is-clicked {
+          font-weight: bold;
+        }
+  }
+
+
+}
+.cont {
+  margin-left: 8em;
+}
+
+h3 {
+  color: #2056c4;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.section {
+  margin-bottom: 2em;
+}
+
+p {
+    display: flexbox;
+}
+
+.payment-sorces-image {
+  margin-top: 1.5em;
+  height: 3.5em;
+  width: 20em;
+  display: block;
 }

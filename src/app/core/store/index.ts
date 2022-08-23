@@ -1,11 +1,11 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { BookingState } from './models/booking.model';
-import { AddToCartReducer } from './reducers/add-cart.reducer';
+import { AddToCartReducer } from './reducers/add-to-cart.reducer';
 import { ReviewContainerReducer } from './reducers/container.reducer';
-import { SetBookingInfoReducer } from './reducers/booking-info.reducer';
+import { SetBookingDateReducer } from './reducers/set-booking-date.reducers';
 
 export const reducers: ActionReducerMap<BookingState> = {
-    info: SetBookingInfoReducer,
+    date: SetBookingDateReducer,
     details: AddToCartReducer,
     container: ReviewContainerReducer
 };
